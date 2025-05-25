@@ -1,0 +1,211 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    background: #fafbfc;
+    color: #222;
+}
+
+/* Main wrapper */
+#main {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(120deg, #f8fafc 60%, #fbeee6 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow-x: hidden;
+    transition: background 0.5s;
+}
+
+/* Navigation Bar */
+#nav {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+    padding: 0 40px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+#nav h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#nav h4:hover {
+    color: #ec1d48;
+}
+
+#nav i {
+    background: linear-gradient(135deg, #dc2430 0%, #7b4397 100%);
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: 600;
+    box-shadow: 0 2px 10px 0 rgba(124, 36, 97, 0.12);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#nav i:hover {
+    background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%);
+}
+
+/* Center Content */
+#center {
+    width: 100%;
+    max-width: 1200px;
+    padding: 60px 32px 30px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#center h1 {
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #1b1b1b;
+    letter-spacing: -2px;
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #e52d27 30%, #b31217 70%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+#center-in {
+    width: 100%;
+    margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff4f2;
+    box-shadow: 0 2px 20px 0 rgba(237, 33, 58, 0.05);
+    border-radius: 20px;
+    padding: 32px 40px;
+    gap: 32px;
+}
+
+#center-in p {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #3d3d3d;
+    max-width: 68%;
+}
+
+#right {
+    width: 25%;
+    min-width: 250px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Navigation Elements List */
+#elem, .elem {
+    padding: 18px 0;
+    border-top: 2px solid #e52d27;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 6px 0;
+    background: transparent;
+    transition: background 0.2s;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#elem:last-child, .elem:last-child {
+    border-bottom: 2px solid #e52d27;
+}
+
+#elem a, .elem a {
+    color: #e52d27;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: 0.2px;
+    transition: color 0.2s, background 0.2s, padding 0.2s;
+    padding: 6px 14px;
+    border-radius: 8px;
+}
+
+#elem i, .elem i {
+    font-size: 25px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s, color 0.2s;
+    color: #b31217;
+}
+
+#elem:hover i, .elem:hover i {
+    opacity: 1;
+}
+
+#elem:hover a, .elem:hover a {
+    background: #fbeee6;
+    color: #b31217;
+    padding-left: 22px;
+}
+
+#bottom {
+    width: 100%;
+    min-height: 240px;
+    background: linear-gradient(120deg, #ec1d48cc 50%, #fbeee6 100%);
+    background-image: url('https://plus.unsplash.com/premium_photo-1673056173240-923a26c63fb3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 -4px 36px 0 rgba(236, 29, 72, 0.12);
+    border-top-left-radius: 38px;
+    border-top-right-radius: 38px;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (max-width: 900px) {
+    #center {
+        padding: 40px 12px 18px 12px;
+    }
+    #center h1 {
+        font-size: 32px;
+    }
+    #center-in {
+        flex-direction: column;
+        gap: 18px;
+        padding: 20px 14px;
+    }
+    #right {
+        width: 100%;
+        min-width: unset;
+    }
+    #bottom {
+        min-height: 150px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+}
